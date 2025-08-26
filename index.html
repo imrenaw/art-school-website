@@ -6,8 +6,11 @@
   <title>White Spirit — Художня студія</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
 <body>
+
   <header class="header">
     <div class="brand">
       <div class="mark" aria-hidden="true"></div>
@@ -16,12 +19,19 @@
         <div class="tagline">Художня студія та майстер-класи</div>
       </div>
     </div>
+    <nav class="nav">
+      <a href="#intro" class="nav-link">Про студію</a>
+      <a href="#formats" class="nav-link">Формати</a>
+      <a href="#showcase" class="nav-link">Роботи</a>
+      <a href="#contacts" class="nav-link">Контакти</a>
+    </nav>
     <div class="city">Київ</div>
+    <button class="menu-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
   </header>
 
   <main>
     <!-- Інтро -->
-    <section class="intro">
+    <section class="intro" id="intro">
       <h1>White Spirit — творче середовище</h1>
       <p>White Spirit — це не просто художня студія, а творче середовище, де мистецтво стає частиною життя. У нас панує легка атмосфера натхнення, свободи і відкритості до нових ідей.</p>
 
@@ -60,7 +70,7 @@
     </section>
 
     <!-- Формати та ціни -->
-    <section class="formats">
+  <section class="formats" id="formats">
       <h2>Формати та ціни</h2>
       <div class="list">
         <!-- Група -->
@@ -114,22 +124,40 @@
     </section>
 
     <!-- Вітрина робіт -->
-    <section class="showcase">
-      <div class="tile" style="background-image: url('images/example1.jpg');"></div>
-      <div class="tile" style="background-image: url('images/example2.jpg');"></div>
-      <div class="tile" style="background-image: url('images/example3.jpg');"></div>
-      <div class="tile" style="background-image: url('images/example4.jpg');"></div>
-      <div class="tile" style="background-image: url('images/example5.jpg');"></div>
-      <div class="tile" style="background-image: url('images/example6.jpg');"></div>
+    <section class="showcase" id="showcase">
+      <h2 class="gallery-title">Галерея робіт</h2>
+      <div class="gallery">
+        <button class="gallery-arrow left" aria-label="Попереднє зображення">&#8592;</button>
+        <div class="gallery-main">
+          <img src="images/example1.jpg" alt="Робота 1" class="gallery-image" data-index="0">
+        </div>
+        <button class="gallery-arrow right" aria-label="Наступне зображення">&#8594;</button>
+      </div>
+      <div class="gallery-thumbs">
+        <img src="images/example1.jpg" alt="thumb1" class="gallery-thumb active" data-index="0">
+        <img src="images/example2.jpg" alt="thumb2" class="gallery-thumb" data-index="1">
+        <img src="images/example3.jpg" alt="thumb3" class="gallery-thumb" data-index="2">
+        <img src="images/example4.jpg" alt="thumb4" class="gallery-thumb" data-index="3">
+        <img src="images/example5.jpg" alt="thumb5" class="gallery-thumb" data-index="4">
+        <img src="images/example6.jpg" alt="thumb6" class="gallery-thumb" data-index="5">
+      </div>
+
+      <!-- Lightbox overlay -->
+      <div class="gallery-lightbox" tabindex="-1">
+        <span class="lightbox-close" title="Закрити">&times;</span>
+        <img src="" alt="full" class="lightbox-img">
+        <button class="lightbox-arrow left" aria-label="Попереднє">&#8592;</button>
+        <button class="lightbox-arrow right" aria-label="Наступне">&#8594;</button>
+      </div>
     </section>
 
     <!-- Контакти -->
-    <section class="contacts">
+  <section class="contacts" id="contacts">
       <h2>Контакти</h2>
       <div class="contact-list">
-        <div class="contact-chip">Телефон: +41 12 345 67 89</div>
-        <div class="contact-chip">Email: info@white-spirit.ua</div>
-        <div class="contact-chip">Адреса: Київ, вул. Прикладна 1</div>
+        <div class="contact-chip">Телефон: +380667383118</div>
+        <div class="contact-chip">Email: zalyotova2003@gmail.com</div>
+        <div class="contact-chip">Адреса: вулиця Притисько-Микільська, 2, Київ, 04070</div>
       </div>
     </section>
   </main>
