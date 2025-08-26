@@ -1,0 +1,79 @@
+:root {
+  --bg: #ffffff;
+  --ink: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
+  --accent-2: #1e40af;
+  --card: #ffffff;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: ui-sans-serif, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.4; }
+
+header.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+.mark { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+.name { font-weight: 700; font-size: 20px; }
+.tagline { font-size: 14px; color: var(--muted); }
+.city { font-size: 14px; color: var(--muted); }
+
+main { display: flex; flex-direction: column; gap: 40px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+
+section { border-radius: var(--radius); padding: 30px; box-shadow: 0 4px 20px rgba(2,6,23,0.05); }
+
+.intro h1 { font-size: 32px; margin-bottom: 15px; }
+.intro h2 { font-size: 28px; margin: 25px 0 15px; }
+.intro p { margin-bottom: 15px; color: var(--muted); }
+
+.intro-item { margin-bottom: 20px; }
+.intro-item strong { display: block; margin-bottom: 5px; font-size: 16px; }
+.intro-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  margin: 15px 0;
+}
+
+.formats { background: linear-gradient(135deg, #3b82f6, #93c5fd); color: white; }
+.formats h2 { text-align: center; font-size: 36px; margin-bottom: 25px; }
+.formats .list { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+.chip {
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: left;
+  min-width: 260px;
+  max-width: 360px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+.chip:hover { transform: scale(1.03); }
+.chip strong { display: block; font-size: 20px; margin-bottom: 5px; }
+.chip span { font-size: 18px; font-weight: 600; display: block; margin-bottom: 10px; }
+.chip em { display: block; margin-bottom: 10px; font-style: normal; font-weight: 600; }
+
+.showcase { display: grid; grid-template-columns: repeat(auto-fill,minmax(180px,1fr)); gap: 15px; }
+.tile { width: 100%; aspect-ratio: 1/1; border-radius: 14px; background-size: cover; background-position: center; }
+
+.contacts { background: #f8fafc; text-align: center; }
+.contacts h2 { margin-bottom: 20px; font-size: 28px; }
+.contact-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+.contact-chip { background: var(--accent); color: white; padding: 15px 20px; border-radius: 14px; min-width: 200px; }
+
+@media (max-width: 768px) {
+  .formats .list { flex-direction: column; align-items: center; }
+  .chip { max-width: 90%; }
+}
