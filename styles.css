@@ -1,3 +1,20 @@
+.nav-close, .nav-overlay {
+  display: none;
+}
+/* Overlay для мобильного меню */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(30,41,59,0.35);
+  z-index: 199;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.nav-overlay.open {
+  display: block;
+  opacity: 1;
+}
 :root {
   --bg: #ffffff;
   --ink: #0f172a;
@@ -416,35 +433,91 @@ footer.footer {
 }
 
 @media (max-width: 700px) {
+  .nav-close {
+    display: block;
+  }
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(30,41,59,0.35);
+    z-index: 199;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .nav-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
   .nav {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 82vw;
+    max-width: 340px;
+    min-width: 220px;
     height: 100vh;
     background: #fff;
     flex-direction: column;
     gap: 0;
-    box-shadow: 0 8px 32px #2563eb22;
+    box-shadow: 0 8px 32px #2563eb44;
     z-index: 200;
-    padding-top: 80px;
+    padding-top: 70px;
     align-items: center;
     justify-content: flex-start;
+    border-radius: 0 22px 22px 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1), opacity 0.35s;
   }
   .nav.open {
     display: flex;
+    transform: translateX(0);
+    opacity: 1;
   }
   .nav-link {
-    font-size: 24px;
-    padding: 22px 0;
-    width: 100vw;
+    font-size: 22px;
+    padding: 20px 0;
+    width: 100%;
     text-align: center;
-    border-bottom: 1px solid #e2e8f0;
+    border: none;
+    background: none;
+    color: var(--accent-2);
+    font-weight: 600;
+    border-radius: 12px;
+    margin: 0 0 8px 0;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: none;
+  }
+  .nav-link:active, .nav-link:hover {
+    background: #e0e7ff;
+    color: var(--accent);
   }
   .menu-toggle {
     display: flex;
+    z-index: 201;
   }
   .city { display: none; }
   .chip { max-width: 98vw; }
+  .nav-close {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 30px;
+    color: var(--accent-2);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 202;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: background 0.2s;
+  }
+  .nav-close:hover {
+    background: #e0e7ff;
+  }
 }

@@ -34,19 +34,32 @@ window.addEventListener('DOMContentLoaded', () => {
   // Мобильное меню
   const menuBtn = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
-  menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    menuBtn.classList.toggle('open');
+  const navOverlay = document.querySelector('.nav-overlay');
+  const navClose = document.querySelector('.nav-close');
+  function openMenu() {
+    nav.classList.add('open');
+    navOverlay.classList.add('open');
+    menuBtn.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    nav.classList.remove('open');
+    navOverlay.classList.remove('open');
+    menuBtn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  menuBtn.addEventListener('click', openMenu);
+  navClose.addEventListener('click', closeMenu);
+  navOverlay.addEventListener('click', closeMenu);
+  // Закрытие меню при клике на ссылку
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 700) closeMenu();
+    });
   });
-
-  // Закрытие меню при клике вне
-  document.addEventListener('click', (e) => {
-    if (window.innerWidth < 700 && nav.classList.contains('open')) {
-      if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
-        nav.classList.remove('open');
-        menuBtn.classList.remove('open');
-      }
-    }
+  // Закрытие меню по Esc
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu();
   });
 
   // --- Галерея ---
