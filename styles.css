@@ -419,17 +419,28 @@ footer.footer {
   .nav {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 0;
     left: 0;
     width: 100vw;
+    height: 100vh;
     background: #fff;
     flex-direction: column;
     gap: 0;
     box-shadow: 0 8px 32px #2563eb22;
     z-index: 200;
+    padding-top: 80px;
+    align-items: center;
+    justify-content: flex-start;
   }
   .nav.open {
     display: flex;
+  }
+  .nav-link {
+    font-size: 24px;
+    padding: 22px 0;
+    width: 100vw;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
   }
   .menu-toggle {
     display: flex;
