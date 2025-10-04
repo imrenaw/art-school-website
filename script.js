@@ -64,12 +64,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // --- Галерея ---
   const images = [
-    'images/example1.jpg',
-    'images/example2.jpg',
-    'images/example3.jpg',
-    'images/example4.jpg',
-    'images/example5.jpg',
-    'images/example6.jpg',
+    'images/img1.jpg',
+    'images/img2.jpg',
+    'images/img3.jpg',
   ];
   let current = 0;
   const mainImg = document.querySelector('.gallery-image');
@@ -89,7 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
     mainImg.src = images[current];
     mainImg.setAttribute('data-index', current);
     thumbs.forEach(t => t.classList.remove('active'));
-    if (thumbs[current]) thumbs[current].classList.add('active');
+    if (thumbs.length > 0 && thumbs[current]) thumbs[current].classList.add('active');
   }
 
   leftBtn.addEventListener('click', () => showImage(current - 1));
