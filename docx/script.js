@@ -1,3 +1,8 @@
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+const overlay = document.querySelector('.nav-overlay');
+const navClose = document.querySelector('.nav-close');
+
 // Анимация появления секций, изображений и плиток
 function revealOnScroll() {
   const reveal = (selector, className = 'visible') => {
@@ -160,3 +165,5 @@ window.addEventListener('DOMContentLoaded', () => {
   // Инициализация
   showImage(0);
 });
+
+

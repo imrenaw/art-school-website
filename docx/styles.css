@@ -15,9 +15,13 @@
   display: block;
   opacity: 1;
 }
+
+.longLogo {
+  height: 30px;
+}
 :root {
   --bg: #ffffff;
-  --ink: #0f172a;
+  --ink: #13276e;
   --muted: #475569;
   --accent: #2563eb;
   --accent-2: #1e40af;
@@ -520,4 +524,8 @@ footer.footer {
   .nav-close:hover {
     background: #e0e7ff;
   }
+}
+
+.menuLogo {
+  height: 30px;
 }
